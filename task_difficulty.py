@@ -1,13 +1,11 @@
 import numpy as np
 from scipy.special import gamma, loggamma, binom
 from sklearn.metrics import pairwise_distances
-import torch
 from torchvision import datasets
 from torchvision.transforms import ToTensor
 import matplotlib.pyplot as plt
 import matplotlib
 import glob
-from PIL import Image
 
 rng = np.random.default_rng()
 
@@ -463,7 +461,6 @@ if __name__ == '__main__':
     plt.plot([delta for delta in range(30, 120)], diffs, linewidth=3)
     plt.xlabel(r'$\delta$')
     plt.ylabel('Task Difficulty (bits)')
-    # plt.xscale('log')
     plt.yscale('log')
     plt.gca().get_xaxis().set_major_formatter(
         matplotlib.ticker.FuncFormatter(lambda x, p: format(int(x), ',')))
